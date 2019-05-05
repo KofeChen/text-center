@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大段文字容器内水平垂直居中</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .layout{
+            width: 600px;
+            height: 300px;
+            background-color: darkgray;
+            position:absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -300px;
+            margin-top: -150px;
+            text-align: center;
+        }
+        .layout::before{
+            content:'';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .content{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .content .title{
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .content .p1{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="content">
+            <div class="title">这是标题</div>
+            <div class="p1">这是内容，这段文字在当前区块内垂直水平居中</div>
+        </div>
+    </div>
+</body>
+</html>
